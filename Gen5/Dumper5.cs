@@ -123,7 +123,7 @@ public static class Dumper5
         using var ms = new MemoryStream();
         using var bw = new BinaryWriter(ms);
 
-        bw.Write((ushort)area.Location);
+        bw.Write(area.Location);
         bw.Write((byte)area.Type);
         bw.Write((byte)0);
 
@@ -136,8 +136,8 @@ public static class Dumper5
     private static void WriteSlot(BinaryWriter bw, EncounterSlot5 slot)
     {
         bw.Write((ushort)(slot.Species | (slot.Form << 11)));
-        bw.Write((byte)slot.LevelMin);
-        bw.Write((byte)slot.LevelMax);
+        bw.Write(slot.LevelMin);
+        bw.Write(slot.LevelMax);
     }
 
     #region Alt Slots

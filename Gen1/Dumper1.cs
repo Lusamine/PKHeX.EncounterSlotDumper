@@ -128,7 +128,7 @@ public static class Dumper1
 
         bw.Write((ushort)area.Location);
         bw.Write((byte)area.Type);
-        bw.Write((byte)area.Rate);
+        bw.Write(area.Rate);
 
         foreach (var slot in area.Slots)
             WriteSlot(bw, slot);
@@ -139,9 +139,9 @@ public static class Dumper1
     private static void WriteSlot(BinaryWriter bw, EncounterSlot1 slot)
     {
         bw.Write((byte)slot.Species);
-        bw.Write((byte)slot.SlotNumber);
-        bw.Write((byte)slot.LevelMin);
-        bw.Write((byte)slot.LevelMax);
+        bw.Write(slot.SlotNumber);
+        bw.Write(slot.LevelMin);
+        bw.Write(slot.LevelMax);
     }
 
     // FR/LG location indexes, since they are a superset of RBY.

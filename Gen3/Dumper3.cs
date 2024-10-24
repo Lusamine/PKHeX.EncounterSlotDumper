@@ -69,7 +69,7 @@ public static class Dumper3
 
         bw.Write((ushort)area.Location);
         bw.Write((byte)area.Type);
-        bw.Write((byte)area.Rate);
+        bw.Write(area.Rate);
 
         foreach (var slot in area.Slots)
             WriteSlot(bw, slot);
@@ -104,7 +104,7 @@ public static class Dumper3
 
         bw.Write((ushort)area.Location);
         bw.Write((byte)area.Type);
-        bw.Write((byte)area.Rate);
+        bw.Write(area.Rate);
 
         foreach (var slot in area.Slots.Cast<EncounterSlot3Swarm>())
             WriteSlotSwarm(bw, slot);

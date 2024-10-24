@@ -98,7 +98,7 @@ public static class Dumper4
 
         bw.Write((ushort)area.Location);
         bw.Write((byte)area.Type);
-        bw.Write((byte)area.Rate);
+        bw.Write(area.Rate);
         bw.Write((ushort)area.TypeEncounter);
 
         foreach (var slot in area.Slots)

@@ -141,10 +141,10 @@ public static class Dumper2
         using var bw = new BinaryWriter(ms);
 
         var time = area.Slots.Max(z => z.Time);
-        bw.Write((byte)area.Location);
+        bw.Write(area.Location);
         bw.Write((byte)time);
         bw.Write((byte)area.Type);
-        bw.Write((byte)SentinelVariableSlotRates); // Area Rate sentinel to indicate multiple rates
+        bw.Write(SentinelVariableSlotRates); // Area Rate sentinel to indicate multiple rates
         foreach (byte b in area.SlotRates)
             bw.Write(b);
 
@@ -159,10 +159,10 @@ public static class Dumper2
         using var bw = new BinaryWriter(ms);
 
         var first = area.Slots[0];
-        bw.Write((byte)area.Location);
+        bw.Write(area.Location);
         bw.Write((byte)first.Time);
         bw.Write((byte)area.Type);
-        bw.Write((byte)area.AreaRate); // Area Rate
+        bw.Write(area.AreaRate); // Area Rate
         if (area.AreaRate == SentinelVariableSlotRates)
             throw new Exception("Invalid slot rate");
 
@@ -174,9 +174,9 @@ public static class Dumper2
     private static void WriteSlot(BinaryWriter bw, EncounterSlot2 slot)
     {
         bw.Write((byte)slot.Species);
-        bw.Write((byte)slot.SlotNumber);
-        bw.Write((byte)slot.LevelMin);
-        bw.Write((byte)slot.LevelMax);
+        bw.Write(slot.SlotNumber);
+        bw.Write(slot.LevelMin);
+        bw.Write(slot.LevelMax);
     }
 }
 
